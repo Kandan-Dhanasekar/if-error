@@ -8,8 +8,8 @@ on:
         default: dist
         type: string
     outputs:
-      results: 
-        description: The results of the deployment operation
+      result: 
+        description: The result of the deployment operation
         value: ${{ jobs.deploy.outputs.outcome }}
     #secrets:
       #some-secret:
@@ -17,7 +17,7 @@ on:
 jobs:
   deploy:
     outputs: 
-      outcome: ${{ steps.set-result.outputs.step.result }}
+      outcome: ${{ steps.set-result.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Get build artifacts
